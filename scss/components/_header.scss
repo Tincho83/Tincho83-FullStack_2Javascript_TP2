@@ -1,0 +1,409 @@
+@import "../base/variables";
+@import "../partials/mediaqueries";
+@import "../base/extends";
+@import "../base/mixins";
+@import "../base/maps";
+
+
+
+//* ********************************************************* Inicio Estilos para Mobile First */
+@media only screen and (min-width: $dimMobile) {
+
+
+    //* Inicio: Tags y bootstrap */
+    body {
+        background-image: linear-gradient(to top, $color-celesteuno_usogeneral, $color-celestecielo_usogeneral);
+        /*         overflow: hidden; */
+    }
+
+    h1 {
+        font-size: 9px;
+        margin-bottom: 0rem;
+    }
+
+    .btn {
+        --bs-btn-font-size: 0.75rem;
+        margin-left: 5px;
+    }
+
+    .dropdown-menu {
+        --bs-dropdown-min-width: 19rem;
+    }
+
+
+    //* Fin: Tags y bootstrap */  
+
+    #contenamin {
+        position: absolute;
+        top: -24px;
+        width: 99%;
+        text-align: right;
+    }
+
+    //* Inicio: Cabecera */
+    .cabecera {
+        background-image: linear-gradient(to top, $color-grisbasico_usogeneral, $color-blancobasico_usogeneral);
+    }
+
+    //* Inicio: Estilos Enlaces Superiores */
+    .cabecera_divEnlacesHorizontales {
+        justify-content: space-between;
+        display: none;
+    }
+
+    .cabecera_divEnlacesHorizontales_ul {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: $sinseparacion;
+        text-align: center;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .cabecera_divEnlacesHorizontales_ul_li {
+        display: inline;
+        padding: 0px 15px 0px 15px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        text-align: center;
+        align-content: center;
+    }
+
+    .cabecera_divEnlacesHorizontales_ul_li_a {
+        text-decoration: none;
+        text-align: center;
+        align-content: center;
+        color: $color-negrobasico_usogeneral;
+        padding: 0px;
+        margin-bottom: 0px;
+        font-variant: small-caps;
+        font-size: 1rem;
+
+        &:hover {
+            color: $color-azulclaro_a_hover;
+            font-weight:300;
+        }
+
+    }
+
+    .cabecera_divEnlacesHorizontales_ul_li_a_img {
+        @include tamanio(20px, 20px);
+        padding: $sinseparacion;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .cabecera_divEnlacesHorizontales_ul_li_a_img_p {
+        display: none;
+        border: 1px solid $color-negrobasico_usogeneral;
+    }
+
+    //* Fin: Estilos Enlaces Superiores */
+
+    //* Inicio: Panel Web */
+    .cabecera_divPanelWeb {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: baseline;
+        align-content: space-between;
+        border-bottom: 1px solid $color-azuluno_usogeneral;
+
+    }
+
+    //* Inicio: Panel Web - Menu Hamburguesa */
+    .cabecera_divPanelWeb_divMenuflex:nth-child(1) {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;
+        order: 0;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divMenuDropdown {
+        margin-left: 3px;
+
+    }
+
+    .dropdown-menu {
+        background-image: linear-gradient(to top, $color-grisuno_usogeneral, $color-blancobasico_usogeneral);
+    }
+
+    //* Inicio Switch Modo Noche */
+    //* Switch - caja alrededor del slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        @include tamanio(60px, 34px);
+
+        //* Ocultar checkbox del HTML */
+        input {
+            opacity: 0;
+            @include tamanio(0px, 0px);
+        }
+    }
+
+    //* Slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-grisuno_usogeneral;
+        -webkit-transition: .4s;
+        transition: .4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            @include tamanio(26px, 26px);
+            left: 4px;
+            bottom: 4px;
+            background-color: $color-blancobasico_usogeneral;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    }
+
+    input:checked+.slider {
+        background-color: $color-azuldos_usogeneral;
+
+        &:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px $color-azuldos_usogeneral;
+    }
+
+
+
+    //* Redondear slider */
+    .slider.round {
+        border-radius: 34px;
+
+        &:before {
+            border-radius: 50%;
+        }
+    }
+
+
+    //* Fin: Switch modo Noche */
+
+    //* Fin: Panel Web - Menu Hamburguesa */
+
+
+
+    //* Inicio: Panel Web - Logo */
+
+    .cabecera_divPanelWeb_divMenuflex:nth-child(2) {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;
+        order: 0;
+        align-items: center;
+        align-content: center;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_a_img-logo {
+        @include tamanio(40px, 40px);
+        padding: $sinseparacion;
+    }
+
+    h1 {
+        font-size: 9px;
+        margin-bottom: 0rem;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex:nth-child(3) {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;
+        order: 0;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito {
+        justify-content: space-between;
+
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 5px 3px 0px 5px;
+
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li {
+        display: inline;
+        padding-right: 5px;
+        margin-bottom: 0px;
+        font-size: 14px;
+        text-align: center;
+
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a {
+        text-decoration: none;
+        text-align: center;
+        color: $color-negrobasico_usogeneral;
+        padding: 0px;
+        margin-bottom: 0px;
+        font-variant: small-caps;
+        font-size: 0.8rem;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img {
+        @include tamanio(25px, 25px);
+        padding: $sinseparacion;
+        margin-top: 0px;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img_p {
+        font-size: 9px;
+        display: inline;
+        margin-bottom: 0px;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal {
+        display: inline;
+        padding: $sinseparacion;
+        margin-bottom: 00px;
+        font-size: 14px;
+        text-align: center;
+        display: none;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a {
+        text-decoration: none;
+        text-align: center;
+        color: $color-negrobasico_usogeneral;
+        padding: 0px;
+        margin-bottom: 0px;
+        font-variant: small-caps;
+        font-size: 0.8rem;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a_img {
+        @include tamanio(30px, 25px);
+        padding: $sinseparacion;
+        margin-top: 0px;
+    }
+
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a_img_p {
+        font-size: 9px;
+        display: inline;
+        margin-bottom: 0px;
+    }
+
+    //* Fin:Cabecera */
+
+
+}
+
+
+//* ********************************************************* Estilos para Tablet Second */
+@media only screen and (min-width: $dimTablet) {
+
+    .cabecera_divEnlacesHorizontales {
+        display: contents;
+    }
+
+    .cabecera_divEnlacesHorizontales_ul_li_a_img_p {
+        display: contents;
+        font-size: 11px;
+    }
+
+    .cabecera_divPanelWeb {
+        border-top: 5px solid $color-azuluno_usogeneral;
+        position: relative;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex:nth-child(2) {
+        display: inline;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_a_img-logo {
+        display: inline;
+        @include tamanio(40px, 40px);
+        padding: $sinseparacion;
+    }
+
+    h1 {
+        display: inline;
+        font-size: 11px;
+        margin-bottom: 0rem;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li {
+        padding: 0px 40px 0px 40px;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img_p {
+        font-size: 11px;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal {
+        display: contents;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a_img_p {
+        font-size: 11px;
+        margin-right: 20px;
+    }
+
+
+}
+
+
+
+//* ********************************************************* Estilos para Desktop Last */
+@media only screen and (min-width: $dimDesktop) {
+
+    .cabecera_divEnlacesHorizontales_ul_li_a_img_p {
+        font-size: 14px;
+    }
+
+    h1 {
+        display: inline;
+        margin-bottom: 0rem;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li {
+        padding: 0px 60px 0px 60px;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img_p {
+        font-size: 14px;
+    }
+
+    .cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a_img_p {
+        font-size: 14px;
+    }
+
+
+
+
+}

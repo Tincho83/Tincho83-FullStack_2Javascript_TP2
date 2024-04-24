@@ -1,0 +1,42 @@
+@import "../base/variables";
+@import "../partials/mediaqueries";
+@import "../base/extends";
+@import "../base/mixins";
+@import "../base/maps";
+
+//* Inicio Estilo para pantalla con dimensiones menores a Mobile First 320px horizontal */
+@media only screen and (max-width: $dimPantallaIncomp) {
+
+    .webSite_msjPantallaincompat {
+        background-color: $color-amarillocla_usogeneral;
+        color: $color-negrobasico_usogeneral;
+        border: 3px solid $color-negrobasico_usogeneral;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .snow_wrap {
+        visibility: hidden;
+        display: none;
+    }
+
+    #contenamin {
+        position: absolute;
+        top:-24px;
+        width:99%;
+        text-align: right;
+    }
+    
+
+    body {
+        background-color: $color-grisbasico_usogeneral;
+    }
+
+    header,
+    .portada,
+    main,
+    footer {
+        display: none;
+    }
+}
+//* Fin Estilo para pantalla con dimensiones menores a Mobile First 320px horizontal */

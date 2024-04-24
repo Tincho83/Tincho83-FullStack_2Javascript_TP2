@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- link Bootstraps Online -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- link CSS -->
+  <!-- <link rel="preload" href="../css/estilo.css" as="style"> -->
+  <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+
+  <!-- link Fuente TrueFont Online -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- link CSS Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
+  <title>IO.com Tienda de Productos Lacteos</title>
+
+  <!-- link JS -->
+  <script src="./js/app.js" defer></script>
+
+
+</head>
+
+<body>
+
+  <!-- Inicio: mensaje si posee una pantalla incompatible -->
+  <div class="webSite_msjPantallaincompat">Use una pantalla que tenga 320px o superior en horizontal.</div>
+  <!-- Fin: mensaje si posee una pantalla incompatible -->
+
+  <div>
+    <!-- Inicio: Validacion para comprar con medios de pago -->
+    <!-- Validacion Edad -->
+    <div class="modal" id="modal-edad" data-backdrop="static" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Ingrese su edad</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Edad: <input type="text" id="validar-edad" class="campoNumerico">
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="guardarEdad()">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Validacion Edad -->
+    <div class="modal" id="modal-menor" data-backdrop="static" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Menor de edad</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Eres menor de edad, para comprar con medios de pago electronicos debes ser mayor de 18 años.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Para Confirmacion de Compra realizada -->
+    <div class="modal" id="modal-pedido" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmación de Pedido</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="detalle-pedido"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin: Validacion para comprar con medios de pago -->
+
+  <header class="cabecera" id="inicio">
+
+    <!-- Inicio: vinculos superiores horizontales -->
+    <div class="cabecera_divEnlacesHorizontales">
+      <ul class="cabecera_divEnlacesHorizontales_ul">
+        <li class="cabecera_divEnlacesHorizontales_ul_li">
+          <a href="https://www.correoargentino.com.ar/" class="cabecera_divEnlacesHorizontales_ul_li_a" target="_blank">
+            <img src="./imgs/enviosdeliverycorreo.png" alt="Segui tu Compra"
+              class="cabecera_divEnlacesHorizontales_ul_li_a_img">
+            <p class="cabecera_divEnlacesHorizontales_ul_li_a_img_p">Segui tu compra</p>
+          </a>
+        </li>
+        <li class="cabecera_divEnlacesHorizontales_ul_li">
+          <a href="../index.html#contacto" class="cabecera_divEnlacesHorizontales_ul_li_a" target="_blank">
+            <img src="./imgs/contactos.png" alt="Contactos" class="cabecera_divEnlacesHorizontales_ul_li_a_img">
+            <p class="cabecera_divEnlacesHorizontales_ul_li_a_img_p">Contacto</p>
+          </a>
+        </li>
+        <li class="cabecera_divEnlacesHorizontales_ul_li">
+          <a href="../index.html#sucursales" class="cabecera_divEnlacesHorizontales_ul_li_a" target="_blank">
+            <img src="./imgs/sucursales.png" alt="Sucursales" class="cabecera_divEnlacesHorizontales_ul_li_a_img">
+            <p class="cabecera_divEnlacesHorizontales_ul_li_a_img_p">Sucursales</p>
+          </a>
+        </li>
+        <li class="cabecera_divEnlacesHorizontales_ul_li">
+          <a href="../pages/financiacion.html" class="cabecera_divEnlacesHorizontales_ul_li_a" target="_blank">
+            <img src="./imgs/creditos.png" alt="Financiacion" class="cabecera_divEnlacesHorizontales_ul_li_a_img">
+            <p class="cabecera_divEnlacesHorizontales_ul_li_a_img_p">Financiacion</p>
+          </a>
+        </li>
+        <li class="cabecera_divEnlacesHorizontales_ul_li">
+          <a href="../pages/ayuda.html" class="cabecera_divEnlacesHorizontales_ul_li_a" target="_blank">
+            <img src="./imgs/ayuda.png" alt="Preguntas Frecuentes y Ayuda"
+              class="cabecera_divEnlacesHorizontales_ul_li_a_img">
+            <p class="cabecera_divEnlacesHorizontales_ul_li_a_img_p">Ayuda</p>
+          </a>
+        </li>
+        <li>
+          <!-- Inicio: Switch Modo Noche -->
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span class="texto">Modo Noche</span>
+
+          <!-- Fin: Switch Modo Noche -->
+        </li>
+      </ul>
+    </div>
+    <!-- Fin: vinculos superiores horizontales -->
+
+    <!-- Inicio: Panel Web !!! Usando Flexbox -->
+    <div class="cabecera_divPanelWeb">
+      <div class="cabecera_divPanelWeb_divMenuflex">
+
+      </div>
+
+      <!-- Inicio: Logo -->
+      <div class="cabecera_divPanelWeb_divMenuflex">
+        <a href="./index.html"><img src="./imgs/logo.png" alt="Logo de IOcomm"
+            class="cabecera_divPanelWeb_divMenuflex_a_img-logo"></a>
+        <h1>IO.com Online</h1>
+      </div>
+      <!-- Fin: Logo -->
+
+      <!-- Inicio: SubPanel -->
+      <div class="cabecera_divPanelWeb_divMenuflex">
+        <!-- Separador -->
+        <!-- <div class="cabecera_separadorpanelizq"></div> -->
+
+        <!-- Inicio: Panel Cuenta y Carrito -->
+        <div class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito">
+          <ul class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul">
+            <li class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li">
+              <a href="./pages/cuenta.html" class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a"
+                target="_blank">
+                <img src="./imgs/cuenta.png" alt="Mi Cuenta"
+                  class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img">
+                <p class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img_p">Mi
+                  Cuenta</p>
+              </a>
+            </li>
+            <li class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li">
+              <a href="./pages/carrito.html" class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a"
+                target="_blank">
+                <img src="./imgs/carrito.png" alt="Mi Carrito"
+                  class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img">
+                <p class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img_p">Mi
+                  Carrito</p>
+              </a>
+            </li>
+            <li class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal">
+              <a href="./pages/comparar.html"
+                class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a" target="_blank">
+                <img src="./imgs/comparar2.png" alt="Comparar"
+                  class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a_img">
+                <p class="cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li-sucursal_a_img_p">
+                  Comparar Productos</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Fin: Panel Cuenta y Carrito -->
+
+      </div>
+      <!-- Fin: SubPanel -->
+
+    </div>
+    <!-- Fin: Panel Web -->
+
+
+
+  </header>
+
+  <main class="contenedorprincipal">
+
+    <section class="content-section">
+      <div class=" container-fluid main-image">
+        <h1 class="anim">Compras Online de Productos Lacteos</h1>
+        <h3>Proveedores de Windy</h3>
+
+        <p class="lead" id="terr">Elegi nuestro catalogo de productos Lacteos y recibilos en la puerta de tu casa.</p>
+        <div class="boton">
+          <button class="button-p" id="pedidos">Comenzar a Comprar</button>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row prodlact" id="prodlact">
+
+        </div>
+      </div>
+      <div class="customer" id="customer">
+        <h3> HAGA SU PEDIDO</h3>
+        <div class="form">
+          <div class=" container-fluid delivery">
+            <div class="row">
+              <div class="col-sm column-1">
+                Seleccione el producto que desee:
+              </div>
+              <div class="col-sm column-2">
+                <select name='producto' id="prodlacteos" onchange="agregarPrecio()"></select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm column-1">
+                Cantidad:
+              </div>
+              <div class="col-sm column-2">
+                <input type="text" id="cantidad" class="campoNumerico" onkeypress="calcularSubtotal()">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm column-1">
+                Precio:
+              </div>
+              <div class="col-sm column-2">
+                <input type="text" id="precio" class="campoNumerico" disabled>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm column-1">
+                Subtotal:
+              </div>
+              <div class="col-sm column-2">
+                <input type="text" id="subtotal" class="campoNumerico" disabled>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm column-1">
+              </div>
+              <div class="col-sm column-2">
+                <div class="error" id="error"></div>
+                <button class="agregar" onclick="agregarProducto()">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pedido-final" id="pedido-final"></div>
+      <div class="form-cliente container-fluid form" id="form-cliente"></div>
+    </section>
+  </main>
+
+  <!-- Pie de Pagina contiene datos de contacto, horario, ubicacion, links de ayuda y suscripcion de novedades -->
+  <footer class="piepagina">
+
+    <!-- Inicio: Ir Arriba Flotante -->
+    <div class="piepagina_divflotantesc">
+      <a href="#inicio" target="_self">
+        <img src="./imgs/subir.png" alt="ir a inicio superior de la pagina" class="piepagina_divflotante_imgsubir">
+      </a>
+    </div>
+    <!-- Fin: Ir Arriba Flotante -->
+
+    <!-- Inicio: Contacto WhatsApps Flotante -->
+    <div class="piepagina_divflotante">
+      <a href="https://api.whatsapp.com/send?phone=5435156056156&text=%C2%A1Hola%21+Estoy+en+la+tienda+y+quiero+pedir+m%C3%A1s+informaci%C3%B3n.&type=phone_number&app_absent=0"
+        target="_blank">
+        <img src="./imgs/whatsapp.png" alt="Contacto Whastapp" class="piepagina_divflotante_imgWhatsapps">
+      </a>
+
+    </div>
+    <!-- Fin: Contacto WhatsApps Flotante -->
+
+
+    <!-- Inicio: info de ayuda y suscripcion -->
+    <div class="piepagina_divSuscripcion">
+
+      <a href="pages/ayuda.html" class="cabecera_divEnlacesHorizontales_ul_li_a" target="_blank">
+        <img src="./imgs/ayuda.png" alt="ayuda" class="piepagina_divSuscripcion_img-AyudaTermCondicion">
+        <p class="piepagina_divSuscripcion_img-AyudaTermCondicion_p">Ayuda</p>
+      </a>
+
+      <a href="#" class="cabecera_divEnlacesHorizontales_ul_li_a" target="_blank">
+        <img src="./imgs/ayuda.png" alt="Terminos y Condiciones"
+          class="piepagina_divSuscripcion_img-AyudaTermCondicion">
+        <p class="piepagina_divSuscripcion_img-AyudaTermCondicion_p">Terminos y Condiciones</p>
+      </a>
+
+      <div class="piepagina_divSuscripcion_divSuscripcionMail">
+        <div>
+          <label for="email" class="piepagina_divSuscripcion_divSuscripcionMail_label">
+            <span class="piepagina_divSuscripcion_divSuscripcionMail_label_span">Suscribirse a
+              Novedades:</span></label>
+          <input type="email" id="email" name="email" placeholder="correo@dominio.com"
+            class="piepagina_divSuscripcion_divSuscripcionMail_inputMail">
+          <input type="submit" value="Suscribirse" class="piepagina_divSuscripcion_divSuscripcionMail_inputBTNMail">
+        </div>
+      </div>
+    </div>
+    <!-- Fin: info de ayuda y suscripcion -->
+
+    <!-- Inicio: Datos de desarrollador Web -->
+    <div class="piepagina_divDatos">
+      <label for="comercio">Derechos Reservados (C) Martin Hernandez 2024</label>
+    </div>
+    <!-- Fin: Datos de desarrollador Web -->
+
+
+  </footer>
+
+  <!-- Inicio: Adjunto script Boot -->
+
+  <!-- link Sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+<script src="./js/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<!-- Inicio: Adjunto script Bootstrap -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- Fin: Adjunto script Bootstrap -->
+
+</html>

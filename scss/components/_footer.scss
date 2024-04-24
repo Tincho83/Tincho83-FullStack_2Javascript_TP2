@@ -1,0 +1,282 @@
+@import "../base/variables";
+@import "../partials/mediaqueries";
+@import "../base/extends";
+@import "../base/mixins";
+@import "../base/maps";
+
+//* ********************************************************* Inicio Estilos para Mobile First */
+@media only screen and (min-width: $dimMobile) {
+
+    //* Inicio: Pie de Pagina */
+
+    // Inicio Nesting
+    .piepagina {
+        border: 1px solid $color-negrobasico_usogeneral;
+        padding-top: 20px;
+        background-image: linear-gradient(to top, $color-celestecielo_usogeneral, $color-celesteuno_usogeneral);
+
+        .piepagina_divflotante_imgsubir {
+            @include tamanio(2rem, 2rem);
+            z-index: 10;
+        }
+
+        .piepagina_divflotantesc {
+            display: inline-block;
+            border-radius: 100%;
+            padding: 0.25rem;
+            position: fixed;
+            bottom: 9rem;
+            right: 2rem;
+            background-color: $color-blancobasico_usogeneral;
+            z-index: 10;
+
+            &:hover {
+                background-image: radial-gradient(ellipse 25px 60px, $color-blancobasico_usogeneral, $color-rojobasico_usogeneral );
+                animation-name: animacionsubir;
+                animation-duration: 2s;
+                animation-timing-function: ease-in;
+                animation-iteration-count: 1;
+            }
+        }
+
+        .piepagina_divflotante_imgWhatsapps {
+            @include tamanio(2rem, 2rem);
+            z-index: 10;
+
+            &:hover {
+                @include tamanio(3rem, 3rem);
+                z-index: 10;
+            }
+
+        }
+
+        .piepagina_divflotante {
+            display: inline-block;
+            border-radius: 100%;
+            padding: 0.25rem;
+            position: fixed;
+            bottom: 4rem;
+            right: 2rem;
+            background-color: $color-negrobasico_usogeneral;
+            z-index: 10;
+
+            &:hover {
+                background-color: $color-gristres_usogeneral;
+                animation-name: animacionwts;
+                animation-duration: 3s;
+                animation-timing-function: ease-in;
+                animation-iteration-count: infinite;
+            }
+
+        }
+
+    }
+
+    .piepagina_divcontacto {
+        border: 1px solid $color-negrobasico_usogeneral;
+
+        .piepagina_divcontacto_h2infocontacto {
+            font-weight: bold;
+        }
+
+        .piepagina_divcontacto_pinfocontacto {
+            font-style: italic;
+            padding: 0px 0px 0px 10px
+        }
+
+        .piepagina_divcontacto_ulInfoContacto {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: $sinseparacion;
+            text-align: center;
+            align-content: center;
+            justify-content: space-between;
+
+            .piepagina_divcontacto_ulInfoContacto_li {
+                display: block;
+
+                .piepagina_divcontacto_ulInfoContacto_li_img {
+                    @include tamanio(32px, 32px);
+                    margin-left: 20px;
+                }
+
+                .piepagina_divcontacto_ulInfoContacto_li_img_p {
+                    padding: $sinseparacion;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+
+    .piepagina_divLocacion {
+        border: 1px solid $color-negrobasico_usogeneral;
+
+        .piepagina_divcontacto_ulInfoContacto {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: $sinseparacion;
+            text-align: center;
+            align-content: center;
+            justify-content: space-between;
+        }
+
+        .piepagina_divcontacto_ulInfoContacto_li_img {
+            @include tamanio(32px, 32px);
+            margin-left: 20px;
+        }
+
+        .piepagina_divLocacion_iframeUbicacion {
+            @include tamanio(auto, 300px);
+        }
+
+    }
+
+    .piepagina_divSuscripcion {
+        border: 1px solid $color-negrobasico_usogeneral;
+        padding: 20px 20px 20px 20px;
+        display: flex;
+        position: relative;
+
+        .piepagina_divSuscripcion_img-AyudaTermCondicion {
+            @include tamanio(32px, 32px);
+            margin-left: 20px;
+        }
+
+        .piepagina_divSuscripcion_img-AyudaTermCondicion_p {
+            font-size: 1rem;
+        }
+
+        .piepagina_divSuscripcion_divSuscripcionMail {
+            padding: 0px 0px 0px 40px;
+            display: flex;
+            z-index: -1;
+
+            .piepagina_divSuscripcion_divSuscripcionMail_label_span {
+                font-size: 11px;
+            }
+
+            .piepagina_divSuscripcion_divSuscripcionMail_inputMail {
+                width: auto;
+                font-size: 7px;
+            }
+
+            .piepagina_divSuscripcion_divSuscripcionMail_inputBTNMail {
+                width: auto;
+                font-size: 9px;
+            }
+        }
+    }
+
+    // Fin Nesting
+
+
+    .piepagina_divDatos {
+        border: 1px solid $color-negrobasico_usogeneral;
+        padding: 20px 20px 20px 20px;
+    }
+
+
+
+    /*         .piepagina_divcontacto_pdatoscontacto {
+            display: inline;
+             } */
+
+
+    //* Fin: Pie de Pagina */    
+
+}
+
+//* ********************************************************* Estilos para Tablet Second */
+@media only screen and (min-width: $dimTablet) {
+
+    .piepagina {
+        .piepagina_divflotante_imgsubir {
+            @include tamanio(3rem, 3rem);
+        }
+
+        .piepagina_divflotante_imgWhatsapps {
+            @include tamanio(3rem, 3rem);
+        }
+    }
+
+    .piepagina_divcontacto {
+        .piepagina_divcontacto_ulInfoContacto {
+            padding: $sinseparacion;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .piepagina_divcontacto_ulInfoContacto_li {
+            display: inline;
+            padding: $sinseparacion;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .piepagina_divcontacto_ulInfoContacto_li_img {
+            @include tamanio(32px, 32px);
+            margin-left: 20px;
+        }
+
+        .piepagina_divcontacto_ulInfoContacto_li_img_p {
+            display: inline;
+            font-size: 16px;
+        }
+    }
+
+    .piepagina_divSuscripcion {
+        .piepagina_divSuscripcion_img-AyudaTermCondicion_p {
+            font-size: 14px;
+        }
+
+        .piepagina_divSuscripcion_divSuscripcionMail_label_span {
+            font-size: 14px;
+        }
+
+        .piepagina_divSuscripcion_divSuscripcionMail_inputMail {
+            width: auto;
+            font-size: 11px;
+        }
+
+        .piepagina_divSuscripcion_divSuscripcionMail_inputBTNMail {
+            width: auto;
+            font-size: 11px;
+        }
+    }
+}
+
+
+//* ********************************************************* Estilos para Desktop Last */
+@media only screen and (min-width: $dimDesktop) {
+
+    .piepagina {
+        .piepagina_divflotante_imgsubir {
+            @include tamanio(4rem, 4rem);
+        }
+
+        .piepagina_divflotante_imgWhatsapps {
+            @include tamanio(4rem, 4rem);
+        }
+    }
+
+    .piepagina_divcontacto {
+        .piepagina_divcontacto_ulInfoContacto_li_img_p {
+            display: inline;
+            font-size: 17px;
+        }
+    }
+
+    .piepagina_divSuscripcion {
+        .piepagina_divSuscripcion_divSuscripcionMail_inputMail {
+            width: auto;
+            font-size: 14px;
+        }
+    
+        .piepagina_divSuscripcion_divSuscripcionMail_inputBTNMail {
+            width: auto;
+            font-size: 14px;
+        }
+    }
+
+}

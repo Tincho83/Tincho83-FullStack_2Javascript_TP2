@@ -1,0 +1,26 @@
+@import "../base/variables";
+
+@mixin pantallaincompatible {
+	@media only screen and (max-width: $dimPantallaIncomp) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media only screen and (max-width: $dimMobile) {
+		@content;
+	}
+}
+
+
+@mixin tablet {
+	@media only screen and (max-width: $dimTablet) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (max-width: $dimDesktop) {
+		@content;
+	}
+}

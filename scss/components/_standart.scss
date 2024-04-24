@@ -1,0 +1,142 @@
+@import "../base/variables";
+@import "../partials/mediaqueries";
+@import "../base/extends";
+@import "../base/mixins";
+@import "../base/maps";
+
+/* Comentario se muestra en el compilado */
+// Comentario no se muestra en el compilado
+
+// TP3
+// Implementacion SASS
+
+// * Partials [Estructura ordenada]: se mantiene SASS/SCSS separado en archivos segun funcion (header, main, footer, variables, mixins, etc)
+
+// * Imports [@import ...]: ejemplo: se usa para vincular los documentos de scss. En el archivo principal estilo.scss, se vinculan
+//                                   el resto de documentos scss para el funcionamiento de la web (variables, mixin, nieve[animacion], etc)
+
+// * Variables [$var]: ejemplo, [_header.scss] linea 10 (@media)
+//                              [_header.scss] linea 14 (body)
+//                              variosdocumentos se usa para tener las variables de colores, dimensiones de px para media query, bordes, etc
+
+// * Nesting en footer completo, main parcial y en header poco. Al realizar nesting se rompia la web posiblemente por las clases de bootstrap o de ANIMATE.CSS
+
+// * Nesting [selector {...}]: ejemplo, [_header.scss] linea 134 (.switch),
+//                                   [_header.scss] linea 472 (.contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico),
+//                                   [_header.scss] linea 551 (.contenedorprincipal_divComunicado)
+
+// * Nesting  y PseudoClases: [selector { ... &pseudo {...} }]: ejemplo: [_header.scss] linea 147 (.slider)
+//                                                              [_header.scss] linea 170 (input:checked+.slider)
+//                                                              [_header.scss] linea 187 (.slider.round)
+//                                                              [_header.scss] linea 257 (.cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a)
+//                                                              [_header.scss] linea 70 (.cabecera_divEnlacesHorizontales_ul_li_a),
+
+// * Mixins [@mixin nombre($arg1, $arg2){...}] [@include nombre(valor1, valor2);]: ejemplo, [_header.scss] linea 147 (.slider)
+//                                                                                       [_header.scss] linea 346 (.cabecera_divPanelWeb_divMenuflex_a_img-logo)
+//                                                                                       [_header.scss] linea 271 (.cabecera_divPanelWeb_divMenuflex_divPanelCuentaCarrito_ul_li_a_img)
+//                                                                                       [_main.scss] linea 25 (.carousel-inner)   
+
+// *  Extends [@extends .clase]: [_main.scss] linea 144 155 160 193 405
+//    no se pudo usar extends sobre archivo separado usando media queries
+
+// * Bucle en Main (carousel) linea 33
+
+
+// Implementacion Animaciones
+
+// * Animaciones SASS: se usa sass para hacer efecto de animacion de nieve sobre el archivo index.html, y sobre el boton de whatsapp y ir al inicio.
+
+// * Animaciones ANIMATE CSS: se usa framework para dar animacion al logo, menu hamburgesa y enlaces superiores.     
+
+
+
+// Correcciones TP1 TP2
+
+// * Agregar mas contenido
+// * Borrar comentarios innecesarios
+// * correccion overflow sobre row col-sm-4
+// * Sacar pseudoclase hover al pasar sobre algun producto
+// * Se usa en git la rama dev para subir pruebas y la master para subir la version productiva
+           
+
+
+
+
+
+
+
+
+
+
+
+// ******* Inicio: Establecer Fuente
+//*  *** Roboto Online */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+//* ******* Fin: Establecer Fuente */
+
+//* Estilos Globales (a todos) */
+//* Establecer Fuente a todos las tags "*" (asterisco comodin) */
+* {
+    font-family: $fuentetexto;
+}
+
+//* Inicio Animaciones */
+@keyframes animacionsubir {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1.25, 1.25);
+    }
+}
+
+@keyframes animacionwts {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    14% {
+        transform: rotateX(33deg);
+    }
+
+    28% {
+        transform: rotateX(0deg);
+    }
+
+    43% {
+        transform: rotateX(-33deg);
+    }
+
+    57% {
+        transform: rotateX(0deg);
+    }
+
+    73% {
+        transform: rotateX(22deg);
+    }
+
+    89% {
+        transform: rotateX(-22deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+//* Fin Animaciones */
+
+//*  Inicio Estilos Generales apartir de Mobile First */
+@media only screen and (min-width: $dimMobile) {
+
+    .webSite_msjPantallaincompat {
+        display: none;
+    }
+
+    .snow_wrap {
+        visibility: visible;
+    }
+}
+
+//*  Fin Estilos Generales apartir de Mobile First */

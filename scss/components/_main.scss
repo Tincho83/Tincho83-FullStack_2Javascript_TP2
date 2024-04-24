@@ -1,0 +1,526 @@
+@import "../base/variables";
+@import "../partials/mediaqueries";
+@import "../base/extends";
+@import "../base/mixins";
+@import "../base/maps";
+
+
+//* ********************************************************* Inicio Estilos para Mobile First */
+@media only screen and (min-width: $dimMobile) {
+
+    .portada {
+        color: $color-negrobasico_usogeneral;
+        font-size: 1.3rem;
+        padding: 5px 0px 0px 35vw;
+    }
+
+    //* Inicio Contenido Principal */
+    .contenedorprincipal {
+        padding: 30px 0px 0px 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin: 0px;
+
+        .img_barraorden {
+            width: 16px;
+            height: 16px;
+        }
+
+        .contenedorprincipal_divcontenedorFlex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: stretch;
+            align-content: stretch;
+
+            @for $i from 1 through 3 {
+                .contenedorprincipal_divcontenedorFlex_elementosflex:nth-child(#{$i}) {
+                    display: block;
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    flex-basis: auto;
+                    align-self: auto;
+                    order: 0;
+                }
+            }
+        }
+
+        .contenedorprincipal_divcontenedorFlex_elementosflex {
+            .carousel-inner {
+                @include tamanio(240px, 240px);
+
+                .carousel-item {
+                    transition-duration: 1s;
+                    transition-timing-function: ease-in;
+                    transition-delay: 1s;
+                    transition-property: none;
+                    text-align: center;
+                }
+
+            }
+
+        }
+    }
+
+    .contmensaje {
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .contmensaje_block,
+    .contmensaje_inline-block {
+        width: 100%;
+        padding: 10px 10px 0px 0px;
+        text-align: center;
+        margin: 10px 0;
+        font-size: 11px;
+    }
+
+    .contmensaje_inline-block {
+        display: none;
+    }
+
+
+    .row {
+        margin-left: 2px;
+        margin-right: 0px;
+        --bs-gutter-x: 0.5rem;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente {
+        border-top: 1px solid $color-negrobasico_usogeneral;
+        display: block;
+        padding: 0px 10px 0px 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_p {
+        font-style: italic;
+        padding: 0px 0px 0px 10px;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico {
+        margin: 20px;  
+        border-radius: 1%;
+        justify-content: center;
+        justify-items: center;
+        justify-self: center;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico {
+        h2 {
+            padding-top: 10px;
+            border-top: 3px solid $color-negrobasico_usogeneral;
+        }
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento {
+        border: 1px solid $color-rojobasico_usogeneral;
+        width: 100%;
+        padding: 3px 3px 3px 3px;
+        text-align: center;
+        background-image: linear-gradient(to top, $color-azuldos_usogeneral, $color-celesteuno_usogeneral);
+        border-radius: 1%;
+        margin: 3px 0;
+
+        &:hover {
+            border: 1px solid $color-negrobasico_usogeneral;
+        }
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pProducto {
+        border: 1px solid $color-negrobasico_usogeneral;
+        border-radius: 10%;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pNombreProducto {
+        font-size: 9px;
+        margin-bottom: 0.2rem;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_checkbxComparar {
+        font-size: 9px;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_checkbxComparar_label {
+        @extend .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pNombreProducto;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_imgproducto {
+        @include tamanio(154px, 154px);
+        border: 1px solid $color-negrobasico_usogeneral;
+        border-radius: 2%;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pMarcaProducto {
+        padding-top: 10px;
+        @extend .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pNombreProducto;
+        visibility: visible;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pModeloProducto {
+        @extend .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pNombreProducto;
+        visibility: visible;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pPrecioProducto {
+        @extend .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pNombreProducto;
+        visibility: visible;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pPagoProducto {
+        @extend .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pNombreProducto;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_btnAgregarCarrito {
+        text-transform: uppercase;
+        @extend .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pNombreProducto;
+
+    }
+
+    .contenedorprincipal_divComunicado {
+        padding: 20px 20px 20px 20px;
+        background-color: $color-amarillocla_usogeneral;
+    }
+
+    .contenedorprincipal_divComunicado {
+        h3 {
+            text-align: center;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        h2 {
+            @extend h3;
+            font-size: 22px;
+            color: $color-rojobasico_usogeneral;
+        }
+    }
+
+    aside {
+        h4 {
+            padding-left: 5px;
+        }
+
+        p {
+            padding-left: 10px;
+        }
+    }
+
+    //* Inicio GRID de Productos ******************************************* */
+    .containergrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "Producto Producto Producto"
+            "NombreCatProducto NombreCatProducto NombreCatProducto"
+            "ImgProducto ImgProducto ChBxComparar"
+            "ImgProducto ImgProducto NombreMarca"
+            "ImgProducto ImgProducto NombreModelo"
+            "ImgProducto ImgProducto Precio"
+            "ImgProducto ImgProducto BtnAgregarCarrito"
+            "txtFinanciacion txtFinanciacion txtFinanciacion";
+        border: 2px solid $color-negrobasico_usogeneral;
+    }
+
+    .Producto {
+        grid-area: Producto;
+    }
+
+    .NombreCatProducto {
+        grid-area: NombreCatProducto;
+    }
+
+    .ChBxComparar {
+        grid-area: ChBxComparar;
+    }
+
+    .NombreMarca {
+        grid-area: NombreMarca;
+    }
+
+    .NombreModelo {
+        grid-area: NombreModelo;
+    }
+
+    .Precio {
+        grid-area: Precio;
+    }
+
+    .BtnAgregarCarrito {
+        grid-area: BtnAgregarCarrito;
+        z-index: 2;
+    }
+
+    .txtFinanciacion {
+        grid-area: txtFinanciacion;
+    }
+
+    .ImgProducto {
+        grid-area: ImgProducto;
+    }
+
+    //* Fin GRID de Productos ******************************************* */
+
+    .item-0,
+    .item-1,
+    .item-2 {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        @include tamanio(auto, auto);
+        /*         border: 1px solid $color-negrobasico_usogeneral; */
+        padding-left: 2px;
+        padding-right: 2px;
+
+    }
+
+    .containerbarraorden {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        height: 5vh;
+        //* Se puede omitir si la altura del componente esta definida */
+        /*  border: 1px solid $color-negrobasico_usogeneral; */
+    }
+
+    .barraorden {
+
+        padding-left: 10px;
+    }
+
+    .filtroproductos {
+        border: 1px solid $color-negrobasico_usogeneral;
+    }
+
+    .container {
+        border: 2px solid $color-negrobasico_usogeneral;
+    }
+
+
+
+
+    .contenedorprincipal_iniciosesionregistro {
+        justify-content: space-between;
+    }
+
+    .iniciosesioncuenta {
+        border: 1px solid $color-griscinc_usogeneral;
+        padding: 10px 20px 10px 20px;
+    }
+
+
+
+
+    .framedepaginas {
+        @include tamanio(100vw, 60vh);
+    }
+
+    .contenedorprincipal_ayuda {
+        margin-top: 35px;
+    }
+
+    .contenedorprincipal_ayuda_aside {
+        margin-top: 35px;
+    }
+
+    .contenedorprincipal_ayuda_aside {
+        h3 {
+            margin-top: 35px;
+            padding-top: 10px;
+        }
+    }
+
+    .ul_mediosPago {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        vertical-align: baseline;
+        list-style: none;
+
+        font-style: normal;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        font-variant-numeric: inherit;
+        font-variant-east-asian: inherit;
+        font-weight: 400;
+        font-stretch: inherit;
+        font-size: 16px;
+        line-height: inherit;
+        color: $color-negrobasico_usogeneral;
+        letter-spacing: normal;
+        orphans: 2;
+        text-align: start;
+        text-indent: 0px;
+        text-transform: none;
+        white-space: normal;
+        widows: 2;
+        word-spacing: 0px;
+        -webkit-text-stroke-width: 0px;
+        background-color: $color-blancobasico_usogeneral;
+        text-decoration-thickness: initial;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+    }
+
+    .ul_li_mediosPago {
+        font: inherit;
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        border-top: none;
+        border-right: 0px;
+        border-bottom: 0px;
+        border-left: 0px;
+        border-image: initial;
+        vertical-align: baseline;
+
+        border-width: 1px 0px 0px;
+        border-top-style: solid;
+        border-right-style: initial;
+        border-bottom-style: initial;
+        border-left-style: initial;
+        border-top-color: $color-griscuat_usogeneral;
+        border-right-color: initial;
+        border-bottom-color: initial;
+        border-left-color: initial;
+    }
+
+    .ul_li_img_mediosPago {
+        @include tamanio(60px, 60px);
+
+        font: inherit;
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        vertical-align: baseline;
+    }
+
+    .p_mediosPago_nobold {
+        font-family: inherit;
+        box-sizing: border-box;
+        margin: 0px 0px 1em;
+        padding: 0px;
+        border: 0px;
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        font-size: inherit;
+        line-height: 1.4285em;
+        vertical-align: baseline;
+    }
+
+    .p_mediosPago {
+        @extend .p_mediosPago_nobold;
+        font-weight: bold;
+    }
+
+}
+
+//* ********************************************************* Estilos para Tablet Second */
+@media only screen and (min-width: $dimTablet) {
+
+    .portada {
+        font-size: 1.4rem;
+    }
+
+    .carousel-inner {
+        @include tamanio(300px, 300px);
+    }
+
+
+    .contmensaje_block {
+        display: none;
+    }
+
+    .contmensaje_inline-block {
+        display: inline-block;
+        width: auto;
+        padding: 15px 0px 15px 0px;
+        font-size: 14px;
+    }
+
+    .contenedorprincipal {
+        padding: 10px 0px 0px 0px;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento {
+        border: 1px solid $color-rojouno_usogeneral;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background-color: $color-celesteuno_usogeneral;
+        margin: 10px 0;
+        display: inline-block;
+        width: auto;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_imgproducto {
+        @include tamanio(220px, 220px);
+        border: 1px solid $color-negrobasico_usogeneral;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pMarcaProducto {
+        visibility: visible;
+        font-weight: bold;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pModeloProducto {
+        visibility: visible;
+        font-weight: bold;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_pPrecioProducto {
+        visibility: visible;
+        font-weight: bold;
+    }
+
+    .contenedorprincipal_divComunicado {
+        display: none;
+        font-size: 30px;
+    }
+
+}
+
+//* ********************************************************* Estilos para Desktop Last */
+@media only screen and (min-width: $dimDesktop) {
+
+    .portada {
+        font-size: 1.4rem;
+    }
+
+    .carousel-inner {
+        @include tamanio(350px, 350px);
+
+    }
+
+    .contmensaje_inline-block {
+        display: inline-block;
+        width: auto;
+        padding: 15px 0px 15px 0px;
+        font-size: 16px;
+    }
+
+    .contenedorprincipal_contenidoprodfrecuente_sectionProductosMozaico_divElemento_imgproducto {
+        @include tamanio(290px, 290px);
+        border: 1px solid $color-negrobasico_usogeneral;
+    }
+
+    .contenedorprincipal_divComunicado {
+        display: none;
+        font-size: 32px;
+    }
+
+}

@@ -1,0 +1,40 @@
+//* Pantalla */
+$dimPantallaIncomp: 319px;
+$dimMobile: 320px;
+$dimTablet: 768px;
+$dimDesktop: 1024px;
+
+//Fuente
+$fuentetexto: 'Roboto', sans-serif;
+
+//Bordes
+$borde1px: "1px solid $color-negrobasico_usogeneral";
+$borde3px: "3px solid $color-negrobasico_usogeneral;";
+
+//* Colores */
+$color-negrobasico_usogeneral: rgba(0, 0, 0, 0.96);
+
+$color-blancobasico_usogeneral: rgba(255, 255, 255, 0.96);
+
+$color-rojobasico_usogeneral: rgba(255, 0, 0, 0.96);
+$color-rojouno_usogeneral: rgba(205, 38, 38, 0.96);
+
+$color-amarillocla_usogeneral: rgba(255, 255, 192, 0.96);
+
+$color-celestecielo_usogeneral: rgba(136, 171, 216, 0.96);
+$color-celesteuno_usogeneral: rgba(173, 216, 230, 0.96);
+
+$color-azulclaro_a_hover: rgba(0, 128, 255, 0.96);
+$color-azuluno_usogeneral: rgba(4, 96, 216, 0.96);
+$color-azuldos_usogeneral: rgba(33, 149, 243, 0.96);
+
+$color-grisbasico_usogeneral: rgba(128, 128, 128, 0.96);
+$color-grisuno_usogeneral: rgba(204, 204, 204, 0.96);
+
+$color-gristres_usogeneral: rgba(221, 221, 221, 0.96);
+$color-griscuat_usogeneral: rgba(227, 229, 235, 0.96);
+$color-griscinc_usogeneral: rgba(80, 80, 80, 0.96);
+
+
+//* Contenido Padding Border Margin */
+$sinseparacion: 0px 0px 0px 0px;

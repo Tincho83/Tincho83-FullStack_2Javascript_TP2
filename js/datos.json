@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+     "nombre": "Leche Entera 1Lt",
+     "precio": 887.5,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_leche_entera_tetra.jpg"
+  },
+  {
+    "id": 2,
+     "nombre": "Leche Descremada 1Lt",
+     "precio": 892.0,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_leche_descremada_tetra.jpg"
+  },
+  {
+    "id": 3,
+     "nombre": "Queso Cremoso 1Kg",
+     "precio": 19570,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_queso_cuartirolo.jpg"
+  },
+  {
+    "id": 4,
+     "nombre": "Queso Port Salut 1Kg",
+     "precio": 20900,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_queso_port_salut.jpg"
+  },
+  {
+    "id": 5,
+     "nombre": "Queso Rallado 400grs",
+     "precio": 2000,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_queso_reggianito.jpg"
+  },
+  {
+    "id": 6,
+     "nombre": "Crema de Leche 350grs",
+     "precio": 3850,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_crema_de_leche.jpg"
+  },
+  {
+    "id": 7,
+     "nombre": "Dulce de Leche 1kg",
+     "precio": 2500,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_dulce_leche_clasico_375.jpg"
+  },
+  {
+    "id": 8,
+     "nombre": "Manteca 200grs",
+     "precio": 3000,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_manteca_200.jpg"
+  },
+  {
+    "id": 9,
+     "nombre": "Yogurt Entero 1Lt",
+     "precio": 1100,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_yogur_durazno_light_sachet.jpg"
+  },
+  {
+    "id": 10,
+     "nombre": "Yogurt Light 1Lt",
+     "precio": 1260,
+     "destacado": true,
+     "imagen": "./imgs/lacteos/windy_yogur_vainilla_sachet.jpg"
+  },
+  {
+    "id": 11,
+     "nombre": "Yogurt Entera 1Lt Tetra",
+     "precio": 1400,
+     "destacado": false,
+     "imagen": "./imgs/lacteos/windy_yogur_durazno_light_sachet.jpg"
+  },
+  {
+    "id": 12,
+     "nombre": "Yogurt Light 1Lt Tetra",
+     "precio": 1260,
+     "destacado": false,
+     "imagen": "./imgs/lacteos/windy_yogur_vainilla_sachet.jpg"
+  }
+]
